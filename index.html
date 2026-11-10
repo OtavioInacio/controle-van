@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F2F4F7">
+  <title>Controle da Van</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+
+
+<div class="wrap">
+  <nav class="navmod" aria-label="Módulos">
+    <button type="button" class="navativo" data-tela="lista">Alunos</button>
+    <button type="button" data-tela="financeiro">Financeiro</button>
+    <button type="button" data-tela="comunicacao">WhatsApp</button>
+  </nav>
+</div>
+
+<div class="wrap" id="telaLista">
+  <div class="top">
+    <div class="grow">
+      <h1>Controle da Van</h1>
+      <p class="sub">Mensalidades dos alunos</p>
+    </div>
+    <button class="hoje" id="hoje" type="button" hidden>Mês atual</button>
+  </div>
+
+  <div class="mes">
+    <button class="ico" id="ant" type="button" aria-label="Mês anterior">&#8249;</button>
+    <div class="lbl" id="mesLbl" aria-live="polite"></div>
+    <button class="ico" id="prox" type="button" aria-label="Próximo mês">&#8250;</button>
+  </div>
+
+  <section class="resumo" aria-label="Resumo do mês">
+    <div class="cols">
+      <div><div class="k">Recebido</div><div class="v ok num" id="sRec">R$ 0,00</div></div>
+      <div><div class="k">A receber</div><div class="v bad num" id="sPen">R$ 0,00</div></div>
+      <div><div class="k">Pagaram</div><div class="v num" id="sQtd">0 de 0</div></div>
+    </div>
+    <div class="bar" role="presentation"><i id="bar"></i></div>
+  </section>
+
+  <div class="tools">
+    <div class="seg" role="group" aria-label="Filtrar alunos">
+      <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+      <button type="button" data-f="pend" aria-pressed="false">Pendentes</button>
+      <button type="button" data-f="pago" aria-pressed="false">Pagos</button>
+    </div>
+    <button class="primary" id="novo" type="button">+ Novo aluno</button>
+  </div>
+
+  <ul class="lista" id="lista"></ul>
+  <div class="nota" id="nota" role="status"></div>
+</div>
+
+<div class="wrap" id="telaPerfil" hidden></div>
+<div class="wrap" id="telaModulo" hidden></div>
+  <script src="script.js"></script>
+</body>
+</html>
